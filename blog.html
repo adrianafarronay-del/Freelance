@@ -1,189 +1,290 @@
-<!doctype html>
+<!doctype html><!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Acerca de mí — Yoselin Fotografía</title>
+  <title>Blog — Consejos de Fotografía | Yoselin Fotografía</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* --- Animaciones suaves y composición estética --- */
-    
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: start;
-      gap: 60px;
-      animation: fadeIn 1s ease;
+    /* Paleta de color lila (Adaptada a Modo Oscuro) */
+    :root {
+      --color-primary: #D1B3FF; /* Lila brillante para acentos */
+      --color-secondary: #9370DB; /* Lila medio para bordes */
+      --color-text: #EAEAEA; /* Texto muy claro */
+      --color-bg: #1A1A1A; /* Fondo casi negro (para tarjetas y secciones) */
+      --color-bg-darker: #0D0D0D; /* Fondo más oscuro (para el body, según mencionaste) */
     }
 
-    .about-photo {
-      position: relative;
-      overflow: hidden;
-      border-radius: 18px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-      transform: translateY(40px);
-      opacity: 0;
-      animation: slideUp 1s ease forwards;
-      animation-delay: .4s;
+    /* Estilos generales (Asumiendo que body ya tiene background-color: #000 o similar en styles.css) */
+    body {
+      /* Aplicamos el color de texto claro para el modo oscuro */
+      font-family: 'Inter', sans-serif;
+      color: var(--color-text);
+      background-color: var(--color-bg-darker); /* Solo si no está en styles.css */
+    }
+    h1, h2, h3 {
+      color: white; /* Títulos blancos o muy claros */
+    }
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    /* Ajuste de color para la descripción del blog */
+    .container p[style="color:#555;"] {
+      color: #BBB !important;
     }
 
-    .about-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 1.5s ease, filter 1s ease;
+    /* Header (Ajuste para modo oscuro) */
+    .brand h1 {
+      color: var(--color-primary) !important;
+    }
+    .nav a {
+      color: #CCC;
+    }
+    .nav a[style*="color:var(--color-primary)"] { /* Estilo para el enlace activo */
+      color: var(--color-primary) !important;
     }
 
-    .about-photo:hover img {
-      transform: scale(1.1);
-      filter: brightness(1.15);
-    }
-
-    .about-info h2 {
-      font-size: 36px;
+    .header .cta-btn {
+      background-color: var(--color-primary);
+      color: var(--color-bg-darker) !important; /* Texto oscuro sobre el botón lila */
+      border-radius: 8px;
+      padding: 8px 16px;
+      transition: background-color 0.3s ease;
       font-weight: 700;
-      margin-bottom: 12px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      -webkit-background-clip: text;
-      color: transparent;
+    }
+    .header .cta-btn:hover {
+      background-color: #A379FF; /* Tono lila ligeramente más oscuro al pasar el ratón */
     }
 
-    .about-info p {
-      color: var(--muted);
-      line-height: 1.6;
-      max-width: 640px;
+    /* Estilos específicos para el blog */
+    .blog-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      margin-top: 28px;
     }
-
-    .about-cards {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      margin-top: 40px;
+    .card {
+      border-radius: 18px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      background-color: var(--color-bg); /* Fondo de tarjeta oscuro */
+      border: 1px solid #333; /* Borde oscuro */
     }
-
-    .about-cards .card {
-      flex: 1;
-      min-width: 160px;
-      background: rgba(255,255,255,0.05);
-      padding: 20px;
-      border-radius: 12px;
-      transition: all .3s ease;
-    }
-
-    .about-cards .card:hover {
+    .card:hover {
       transform: translateY(-6px);
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #fff;
+      box-shadow: 0 12px 25px rgba(209, 179, 255, 0.15); /* Sombra con toque lila claro */
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: 0.4s ease;
+    }
+    .card:hover img {
+      filter: brightness(0.8); /* Oscurecer un poco la imagen al pasar el ratón */
+    }
+    .card-content {
+      padding: 20px;
+      background-color: var(--color-bg); /* Fondo de contenido oscuro */
+    }
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--color-text); /* Título claro */
+    }
+    .card p {
+      color: #AAA; /* Descripción gris claro */
+    }
+    .ghost {
+      display: inline-block;
+      font-weight: 600;
+      margin-top: 6px;
+      transition: color 0.3s ease;
+      color: var(--color-primary); /* Color lila brillante */
+    }
+    .ghost:hover {
+      color: white; /* Blanco al pasar el ratón */
     }
 
+    /* Sección destacada (Highlight) */
+    .highlight-section {
+      padding: 40px;
+      border-radius: 18px;
+      margin-top: 60px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+      background-color: var(--color-bg); /* Fondo oscuro */
+      border: 1px solid var(--color-secondary); /* Borde lila sutil */
+      border-left: 5px solid var(--color-primary); /* Línea lila brillante */
+    }
+    .highlight-section h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: var(--color-primary); /* Título lila brillante */
+    }
+    .highlight-section p {
+      color: var(--color-text);
+    }
+    .highlight-section p[style*="color:#444;"] {
+      color: #E0E0E0 !important;
+    }
+
+    /* Animación */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease forwards;
+    }
     @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes slideUp {
-      to {transform: translateY(0); opacity: 1;}
+    /* Llamado a la acción (CTA Banner) */
+    .cta-banner {
+      margin-top: 60px;
+      color: var(--color-bg-darker); /* Texto oscuro */
+      padding: 36px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.4);
+      animation: fadeIn 1s ease forwards;
+      background-color: var(--color-primary); /* Fondo lila brillante */
     }
+    .cta-banner h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: var(--color-bg-darker); /* Título oscuro sobre lila */
+    }
+    .cta-banner p {
+      color: #333; /* Texto gris oscuro sobre lila */
+      margin-bottom: 20px;
+    }
+    .cta-banner a {
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 8px;
+      transition: all 0.3s ease;
+      background-color: var(--color-bg-darker); /* Botón oscuro para contraste */
+      color: var(--color-primary); /* Texto lila brillante */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .cta-banner a:hover {
+      background-color: #333;
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    .footer div {
+      color: #555; /* Texto oscuro para el footer en modo oscuro */
+    }
+
   </style>
 </head>
+
 <body>
- <header class="header container">
+  <header class="header container">
     <div class="brand">
       <div class="logo">FY</div>
       <div>
-        <h1 style="font-size:14px">Yoselin Fotografía</h1>
-        <p>Acerca de mí</p>
+        <h1 style="font-size:14px; color:var(--color-primary);">Yoselin Fotografía</h1>
+        <p style="color:var(--color-text);">Blog</p>
       </div>
     </div>
     <nav class="nav">
-      <a href="index.html">Inicio</a>
-      <a href="portfolio.html">Portafolio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="blog.html">Blog</a>
-      <a href="about.html">Acerca de mí</a>
-      <a href="contact.html">Contacto</a>
-      <a class="cta-btn">Solicitar Presupuesto</a>
+      <a href="index.html" data-pagetrans>Inicio</a>
+      <a href="portfolio.html" data-pagetrans>Portafolio</a>
+      <a href="servicios.html" data-pagetrans>Servicios</a>
+      <a href="blog.html" data-pagetrans style="color:var(--color-primary); font-weight:600;">Blog</a>
+      <a href="about.html" data-pagetrans>Acerca de mí</a>
+      <a href="contact.html" data-pagetrans>Contacto</a>
+      <a class="cta-btn" data-cta="contact">Solicitar Presupuesto</a>
     </nav>
   </header>
 
-  <!-- MAIN -->
-  <main class="container" style="padding-top:120px; color:var(--white);">
+  <main class="container" style="padding-top:120px">
+    <section>
+      <h2>Blog de Fotografía</h2>
+      <p style="color:#555;">Consejos, inspiración y experiencias detrás del lente para crear fotos únicas y con propósito.</p>
 
-    <section class="about-grid">
-      <div class="about-info">
-        <h2>Hola, soy Yoselin ✨</h2>
-        <p>
-          Soy fotógrafa profesional apasionada por capturar la autenticidad y la elegancia en cada instante. 
-          Me especializo en fotografía de moda, retrato y marcas que buscan transmitir emoción, confianza y estilo.  
-          Mi trabajo combina dirección artística, técnica fotográfica y sensibilidad visual para construir imágenes que cuentan historias reales.
-        </p>
-
-        <h3 style="margin-top:28px;">Mi Filosofía</h3>
-        <p>
-          Creo que cada sesión debe ser una experiencia emocional y estética.  
-          Me gusta acompañar a mis clientes desde la idea inicial hasta el resultado final, guiándolos con cercanía y profesionalismo.  
-          No solo busco una buena foto, sino una <strong>imagen que te represente</strong>.
-        </p>
-
-        <div class="about-cards">
-          <div class="card">
-            <h4>🎯 Precisión</h4>
-            <p>Cada toma está cuidadosamente pensada en luz, encuadre y expresión.</p>
+      <div class="blog-list">
+        <article class="card fade-in">
+          <img src="https://i.pinimg.com/1200x/2e/17/de/2e17dee1011f02957ee59b43448b52ff.jpg" alt="Preparación de sesión">
+          <div class="card-content">
+            <h3>Cómo preparar tu sesión en 5 pasos</h3>
+            <p>Checklist esencial para que tu sesión fluya sin estrés y logres resultados increíbles.</p>
+            <a class="ghost" href="#">Leer más →</a>
           </div>
-          <div class="card">
-            <h4>🕊️ Naturalidad</h4>
-            <p>Busco reflejar emociones auténticas y una estética orgánica.</p>
-          </div>
-          <div class="card">
-            <h4>💡 Creatividad</h4>
-            <p>Fusiono arte y técnica para resultados únicos y memorables.</p>
-          </div>
-        </div>
+        </article>
 
-        <div style="margin-top:40px;">
-          <a class="cta-btn" href="contact.html">Agendar Sesión</a>
-          <a class="ghost" href="portfolio.html" style="margin-left:10px;">Ver Portafolio</a>
-        </div>
+        <article class="card fade-in" style="animation-delay: 0.1s;">
+          <img src="https://i.pinimg.com/736x/8b/08/e7/8b08e79aff780e28e38d65b35b596833.jpg" alt="Luz natural">
+          <div class="card-content">
+            <h3>Iluminación natural vs estudio</h3>
+            <p>Aprende cuándo usar la luz natural y cuándo es mejor recurrir a equipos profesionales.</p>
+            <a class="ghost" href="#">Leer más →</a>
+          </div>
+        </article>
+
+        <article class="card fade-in" style="animation-delay: 0.2s;">
+          <img src="https://i.pinimg.com/736x/0e/d1/9d/0ed19d4bbe9e06841cba512fc66e9253.jpg" alt="Fotografía de retrato">
+          <div class="card-content">
+            <h3>Retratos con personalidad</h3>
+            <p>Trucos para conectar con la persona frente a la cámara y reflejar su esencia en la foto.</p>
+            <a class="ghost" href="#">Leer más →</a>
+          </div>
+        </article>
+
+        <article class="card fade-in" style="animation-delay: 0.3s;">
+          <img src="https://i.pinimg.com/1200x/46/c7/3c/46c73c302bc3dc1dd7a6c7d821c622dc.jpg" alt="Color y edición">
+          <div class="card-content">
+            <h3>Color, edición y estilo visual</h3>
+            <p>Descubre cómo definir una estética coherente que haga reconocible tu trabajo.</p>
+            <a class="ghost" href="#">Leer más →</a>
+          </div>
+        </article>
+
+        <article class="card fade-in" style="animation-delay: 0.4s;">
+          <img src="https://i.pinimg.com/736x/18/e9/be/18e9be11de4018055f3fd4448d4a9b8c.jpg" alt="Equipo fotográfico básico">
+          <div class="card-content">
+            <h3>Tu primer equipo fotográfico</h3>
+            <p>Qué cámara, lente y accesorios son ideales para comenzar sin gastar de más.</p>
+            <a class="ghost" href="#">Leer más →</a>
+          </div>
+        </article>
+
+        <article class="card fade-in" style="animation-delay: 0.5s;">
+          <img src="https://i.pinimg.com/736x/84/74/cd/8474cd660b2f6a4596f5cd607cf5f1fb.jpg" alt="Fotografía de marca">
+          <div class="card-content">
+            <h3>Fotografía de marca y producto</h3>
+            <p>Cómo crear imágenes que comuniquen la esencia de una marca y conecten con su público.</p>
+            <a class="ghost" href="#">Leer más →</a>
+          </div>
+        </article>
       </div>
 
-      <!-- FOTO PRINCIPAL -->
-      <div class="about-photo">
-        <img src="https://i.pinimg.com/736x/ee/fb/52/eefb5220cbf7001d94ca995e62eae85b.jpg" alt="Foto de Yoselin en estudio">
+            <div class="highlight-section fade-in" style="animation-delay: 0.6s;">
+        <h3>Consejo destacado del mes</h3>
+        <p style="color:#444;">✨ “La mejor cámara es la que tienes contigo. Lo importante no es el equipo, sino el ojo para encontrar belleza en lo cotidiano.”</p>
+        <p style="margin-top:10px;">Explora tu entorno con una mirada nueva cada día. Practica, experimenta y atrévete a contar historias con tus fotos.</p>
       </div>
+
+            <div class="cta-banner fade-in" style="animation-delay: 0.7s;">
+        <h3>¿Listo para una sesión profesional?</h3>
+        <p>Agenda tu sesión personalizada y crea fotos llenas de identidad y emoción.</p>
+        <a href="contact.html" data-pagetrans>Contactar ahora</a>
+      </div>
+
     </section>
 
-    <!-- SEGUNDA SECCIÓN: HISTORIA -->
-    <section style="margin-top:100px; text-align:center;">
-      <h2 class="title" style="font-size:32px;">Mi Historia</h2>
-      <p class="lead" style="max-width:720px; margin:20px auto; color:var(--muted);">
-        Desde pequeña me fascinó el arte de capturar momentos. Con los años, convertí esa pasión en mi propósito:
-        ayudar a las personas a recordar, proyectar y conectar a través de la imagen.  
-        Hoy dirijo sesiones en Lima y trabajo con marcas que buscan identidad visual auténtica y moderna.
-      </p>
-      <img src="https://i.pinimg.com/736x/20/40/5a/20405ac2773f99424e7c5b3398a187cb.jpg" 
-           alt="Backstage de sesión fotográfica" 
-           style="width:70%; border-radius:16px; margin-top:30px; box-shadow:0 10px 30px rgba(0,0,0,0.4); animation:fadeIn 2s ease;">
-    </section>
-
-    <footer class="footer container" style="margin-top:80px; text-align:center;">
-      <p>© 2025 Yoselin Fotografía — Lima, Perú</p>
+    <footer class="footer container" style="margin-top:40px; text-align:center;">
+      <div style="color: #555;">© 2025 Yoselin Fotografía · Inspirando miradas y emociones</div>
     </footer>
   </main>
 
-  <script>
-    // Transición suave al cambiar de página
-    document.querySelectorAll('a[data-pagetrans]').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        document.body.style.opacity = 0;
-        setTimeout(() => window.location.href = link.href, 300);
-      });
-    });
-    window.addEventListener('pageshow', () => {
-      document.body.style.opacity = 1;
-      document.body.style.transition = 'opacity 0.6s ease';
-    });
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
