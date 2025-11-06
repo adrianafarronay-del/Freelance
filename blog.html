@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Blog — Consejos de Fotografía | Yoselin Fotografía</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+   
+    .blog-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      margin-top: 28px;
+    }
+    .card {
+      border-radius: 18px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: 0.4s ease;
+    }
+    .card:hover img {
+      filter: brightness(0.9);
+    }
+    .card-content {
+      padding: 20px;
+    }
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .ghost {
+      display: inline-block;
+      font-weight: 600;
+      margin-top: 6px;
+      transition: color 0.3s ease;
+    }
+
+    .highlight-section {
+      padding: 40px;
+      border-radius: 18px;
+      margin-top: 60px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+    .highlight-section h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .cta-banner {
+      margin-top: 60px;
+      color: #fff;
+      padding: 36px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+      animation: fadeIn 1s ease forwards;
+    }
+    .cta-banner h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    .cta-banner a {
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 8px;
+      transition: all 0.3s ease;
+    }
+
+  </style>
+</head>
+
+<body>
+  <header class="header container">
+    <div class="brand">
+      <div class="logo">FY</div>
+      <div>
+        <h1 style="font-size:14px">Yoselin Fotografía</h1>
+        <p>Blog</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html" data-pagetrans>Inicio</a>
+      <a href="portfolio.html" data-pagetrans>Portafolio</a>
+      <a href="servicios.html" data-pagetrans>Servicios</a>
+      <a href="blog.html" data-pagetrans>Blog</a>
+      <a href="about.html" data-pagetrans>Acerca de mí</a>
+      <a href="contact.html" data-pagetrans>Contacto</a>
+      <a class="cta-btn" data-cta="contact">Solicitar Presupuesto</a>
+    </nav>
+  </header>
+
+  <main class="container" style="padding-top:120px">
+    <section>
+      <h2>Blog de Fotografía</h2>
+      <p style="color:#555;">Consejos, inspiración y experiencias detrás del lente para crear fotos únicas y con propósito.</p>
+
+      <div class="blog-list">
+        <article class="card fade-in">
+          <img src="https://i.pinimg.com/736x/b3/0e/f4/b30ef44db37343383b73f1b5de8614b5.jpg" alt="Preparación de sesión">
+          <div class="card-content">
+            <h3>Cómo preparar tu sesión en 5 pasos</h3>
+            <p>Checklist esencial para que tu sesión fluya sin estrés y logres resultados increíbles.</p>
+            <a class="ghost" href="#">Leer más →</a>
+          </div>
+        </article>
+
+        <article class="card fade-in">
+          <img src="https://i.pinimg.com/736x/dc/3a/6f/dc3a6fa3423f3e5df9a00361e4e51248.jpg" alt="Luz natural">
+          <div class="card-content">
+            <h3>Iluminación natural vs estudio</h3>
+            <p>Aprende cuándo usar la luz natural y cuándo es mejor recurrir a equipos profesionales.</p>
+            <a class="ghost" href="#">Leer más →</a>
+          </div>
+        </article>
+
+        <article class="card fade-in">
+          <img src="https://i.pinimg.com/736x/ab/57/34/ab57347c4561cb1f847f8f68f0de81b2.jpg" alt="Fotografía de retrato">
+          <div class="card-content">
+            <h3>Retratos con personalidad</h3>
+            <p>Trucos para conectar con la persona frente a la cámara y reflejar su esencia en la foto.</p>
+            <a class="ghost" href="#">Leer más →</a>
+          </div>
+        </article>
+
+        <article class="card fade-in">
+          <img src="https://i.pinimg.com/736x/0a/89/17/0a8917ce7a0b12b196f2e9f179ec7f76.jpg" alt="Color y edición">
+          <div class="card-content">
+            <h3>Color, edición y estilo visual</h3>
+            <p>Descubre cómo definir una estética coherente que haga reconocible tu trabajo.</p>
+            <a class="ghost" href="#">Leer más →</a>
+          </div>
+        </article>
+
+        <article class="card fade-in">
+          <img src="https://i.pinimg.com/736x/1c/4d/b3/1c4db3faef06a63a8a24b6c31ad5d7d9.jpg" alt="Equipo fotográfico básico">
+          <div class="card-content">
+            <h3>Tu primer equipo fotográfico</h3>
+            <p>Qué cámara, lente y accesorios son ideales para comenzar sin gastar de más.</p>
+            <a class="ghost" href="#">Leer más →</a>
+          </div>
+        </article>
+
+        <article class="card fade-in">
+          <img src="https://i.pinimg.com/736x/15/70/da/1570da046f36b2b1c43f38c33ea2211f.jpg" alt="Fotografía de marca">
+          <div class="card-content">
+            <h3>Fotografía de marca y producto</h3>
+            <p>Cómo crear imágenes que comuniquen la esencia de una marca y conecten con su público.</p>
+            <a class="ghost" href="#">Leer más →</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Sección de consejos destacados -->
+      <div class="highlight-section fade-in">
+        <h3>Consejo destacado del mes</h3>
+        <p style="color:#444;">✨ “La mejor cámara es la que tienes contigo. Lo importante no es el equipo, sino el ojo para encontrar belleza en lo cotidiano.”</p>
+        <p style="margin-top:10px;">Explora tu entorno con una mirada nueva cada día. Practica, experimenta y atrévete a contar historias con tus fotos.</p>
+      </div>
+
+      <!-- Llamado a la acción -->
+      <div class="cta-banner fade-in">
+        <h3>¿Listo para una sesión profesional?</h3>
+        <p>Agenda tu sesión personalizada y crea fotos llenas de identidad y emoción.</p>
+        <a href="contact.html" data-pagetrans>Contactar ahora</a>
+      </div>
+
+    </section>
+
+    <footer class="footer container" style="margin-top:40px; text-align:center;">
+      <div>© 2025 Yoselin Fotografía · Inspirando miradas y emociones</div>
+    </footer>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

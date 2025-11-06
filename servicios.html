@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Servicios y Tarifas — Yoselin Fotografía</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Clases de utilidad mejoradas */
+  
+    .card {
+        border-radius: 12px; /* Esquinas más suaves */
+        padding: 25px;
+        background-color: rgba(255, 255, 255, 0.05); /* Ligeramente más translúcido */
+        transition: transform 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .card:hover {
+      transform: translateY(-5px); /* Efecto sutil al pasar el mouse */
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px; /* Espaciado más amplio entre tarjetas */
+    }
+    .service-icon {
+        font-size: 3rem; /* Icono más grande */
+        margin-bottom: 15px;
+        line-height: 1;
+    }
+    .price-text {
+      font-size: 1.4rem; /* Precio más destacado */
+      margin-top: auto;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    /* Estilos de tabla para mejor estética */
+    table td, table th {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+    }
+    table td:first-child, table th:first-child {
+      text-align: left;
+    }
+    table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .table-header {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: var(--white);
+      font-weight: 700;
+      border-radius: 10px 10px 0 0; /* Esquinas superiores redondeadas */
+    }
+    /* Estilo para el contenedor del CTA final */
+    .cta-final-card {
+        background: radial-gradient(circle at top right, rgba(255, 107, 107, 0.15) 0%, transparent 70%); /* Fondo sutil de degradado */
+        border: 2px solid var(--accent);
+        border-radius: 15px;
+    }
+    .cta-btn {
+      text-decoration: none;
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: var(--accent);
+      color: var(--white);
+      border-radius: 30px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .cta-btn:hover {
+      background-color: var(--accent-2);
+    }
+    /* Asegurar buen espaciado general */
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+    }
+ 
+    .nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+    main {
+        padding-top: 100px; /* Espacio para el header fijo */
+        color: var(--white);
+    }
+    section {
+        padding: 50px 0;
+        margin-top: 0; /* Eliminar margen superior en el section, usar padding */
+    }
+    .footer {
+      padding: 40px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header container">
+    <div class="brand">
+      <div class="logo">FY</div>
+      <div>
+        <h1 style="font-size:1.5rem; font-weight:700;">Yoselin Fotografía</h1>
+        <p style="font-size:0.9rem; color:var(--muted);">Servicios Profesionales</p>
+      </div>
+    </div>
+      <nav class="nav">
+      <a href="index.html" data-pagetrans>Inicio</a>
+      <a href="portfolio.html" data-pagetrans>Portafolio</a>
+      <a href="servicios.html" data-pagetrans>Servicios</a>
+      <a href="blog.html" data-pagetrans>Blog</a>
+      <a href="about.html" data-pagetrans>Acerca de mí</a>
+      <a href="contact.html" data-pagetrans>Contacto</a>
+      <a class="cta-btn" data-cta="contact">Solicitar Presupuesto</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <section class="intro-services" style="text-align:center; padding-top:120px; padding-bottom:50px;">
+        <h2 class="section-title" style="font-size:3.5rem;">Servicios & Tarifas</h2>
+        <p class="section-lead" style="margin:0 auto;">Paquetes diseñados para fotografía de moda, retrato y eventos. Todos incluyen asesoría previa y entrega digital profesional.</p>
+    </section>
+
+    <section class="package-list">
+      <div class="services">
+        <div class="card service">
+          <div class="service-icon">📸</div>
+          <h3>Sesión Básica</h3>
+          <p style="font-size:0.95rem; color:var(--muted);">1 hora de sesión • 10 imágenes editadas en alta resolución • Galería digital privada.</p>
+          <div class="price-text">Desde S/150</div>
+        </div>
+
+        <div class="card service">
+          <div class="service-icon">✨</div>
+          <h3>Sesión Premium</h3>
+          <p style="font-size:0.95rem; color:var(--muted);">2 horas de sesión • Maquillaje básico incluido • 25 imágenes retocadas profesionalmente.</p>
+          <div class="price-text">Desde S/360</div>
+        </div>
+
+        <div class="card service">
+          <div class="service-icon">🎉</div>
+          <h3>Cobertura de Eventos</h3>
+          <p style="font-size:0.95rem; color:var(--muted);">Cobertura fotográfica completa según duración del evento. Incluye edición y galería online.</p>
+          <div class="price-text">Presupuesto según evento</div>
+        </div>
+
+        <div class="card service">
+          <div class="service-icon">🏙️</div>
+          <h3>Fotografía de Marca</h3>
+          <p style="font-size:0.95rem; color:var(--muted);">Ideal para catálogos y redes sociales. Creación de contenido visual que refuerza tu identidad.</p>
+          <div class="price-text">Desde S/480</div>
+        </div>
+      </div>
+
+      <div style="margin-top:60px;">
+        <h4 class="title" style="font-size:1.8rem; font-weight:700; border-left: 4px solid var(--accent); padding-left: 10px;">Cómo trabajamos</h4>
+        <ul style="color:var(--muted); list-style:none; margin-left:0; padding-left:0;">
+          <li style="margin-bottom:8px;"><strong style="color:var(--white);">1. Entendimiento:</strong> Reunión inicial para entender tus objetivos visuales.</li>
+          <li style="margin-bottom:8px;"><strong style="color:var(--white);">2. Planificación:</strong> Planificación creativa y preproducción opcional.</li>
+          <li style="margin-bottom:8px;"><strong style="color:var(--white);">3. Ejecución:</strong> Dirección personalizada durante la sesión.</li>
+          <li style="margin-bottom:8px;"><strong style="color:var(--white);">4. Entrega:</strong> Entrega digital con edición profesional y opción de impresión.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="comparison-table">
+      <h2 class="section-title" style="font-size:2rem; text-align:center;">Comparativa de Paquetes</h2>
+      <div class="card" style="overflow-x:auto; margin-top:20px; padding:0;">
+        <table style="width:100%; border-collapse:collapse; color:var(--white);">
+          <thead>
+            <tr class="table-header">
+              <th style="padding:15px; text-align:left;">Características</th>
+              <th style="padding:15px;">Básico</th>
+              <th style="padding:15px;">Premium</th>
+              <th style="padding:15px;">Evento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Duración</td><td>1 hora</td><td>2 horas</td><td>Variable</td></tr>
+            <tr><td>Imágenes Editadas</td><td>10</td><td>25</td><td>50+</td></tr>
+            <tr style="color:var(--accent);"><td>Maquillaje</td><td>No</td><td>**Sí**</td><td>Opcional</td></tr>
+            <tr><td>Galería Privada</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>Entrega Express</td><td style="color:var(--muted);">-</td><td style="color:var(--accent);">+S/50</td><td>Consultar</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card testimonial-section" style="text-align:center; padding:50px;">
+      <h3 class="title" style="font-size:1.8rem; margin-bottom: 25px;">Lo que dicen mis clientes</h3>
+      <blockquote style="font-style:italic; font-size:1.2rem; max-width: 800px; margin: 0 auto;">
+        <p class="lead" id="testimonial-text">"Yoselin logró captar mi esencia de forma natural. Las fotos quedaron increíbles y reflejan justo lo que buscaba."</p>
+        <p style="font-weight:700; margin-top:15px; color:var(--accent);" id="testimonial-author">— Mariana G.</p>
+      </blockquote>
+    </section>
+
+    <section class="card cta-final-card" style="text-align:center; flex-direction:column; padding:60px;">
+      <h2 class="section-title" style="font-size:2.5rem; margin-bottom:15px;">¿Lista para agendar tu sesión?</h2>
+      <p class="section-lead" style="margin:0 auto 30px auto; max-width:700px; font-size:1.1rem; color:var(--muted);">Transforma tus momentos en recuerdos visuales llenos de arte y emoción. Reserva tu fecha ahora y empecemos a crear.</p>
+      <a href="contact.html" class="cta-btn">Solicitar Presupuesto</a>
+    </section>
+
+    <footer class="footer container">
+      <p>© 2025 Yoselin Fotografía — Lima, Perú. | <a href="#" style="color:var(--muted); text-decoration:none;">Aviso Legal</a></p>
+    </footer>
+  </main>
+
+  <script>
+    // Testimonios rotativos
+    const testimonios = [
+      {texto: "Yoselin logró captar mi esencia de forma natural. Las fotos quedaron increíbles.", autor: "— Mariana G."},
+      {texto: "Excelente experiencia. Profesional, puntual y con una mirada artística única.", autor: "— Luis A."},
+      {texto: "La sesión fue divertida y relajada. El resultado superó mis expectativas.", autor: "— Daniela R."}
+    ];
+    let idx = 0;
+    setInterval(() => {
+      idx = (idx + 1) % testimonios.length;
+      const text = document.getElementById('testimonial-text');
+      const author = document.getElementById('testimonial-author');
+      text.style.opacity = 0;
+      setTimeout(() => {
+        text.textContent = testimonios[idx].texto;
+        author.textContent = testimonios[idx].autor;
+        text.style.opacity = 1;
+      }, 600);
+    }, 5000);
+  </script>
+
+</body>
+</html>

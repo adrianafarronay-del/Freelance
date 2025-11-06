@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Contacto — Solicitar Presupuesto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header container">
+    <div class="brand"><div class="logo">FY</div><div><h1 style="font-size:14px">Yoselin Fotografía</h1><p>Contacto</p></div></div>
+    <nav class="nav">
+      <a href="index.html" data-pagetrans>Inicio</a>
+      <a href="portfolio.html" data-pagetrans>Portafolio</a>
+      <a href="servicios.html" data-pagetrans>Servicios</a>
+      <a href="blog.html" data-pagetrans>Blog</a>
+      <a href="about.html" data-pagetrans>Acerca de mí</a>
+      <a href="contact.html" data-pagetrans>Contacto</a>
+      <a class="cta-btn" data-cta="contact">Solicitar Presupuesto</a>
+    </nav>
+  </header>
+
+  <main>
+    <main class="container" style="padding-top:120px; color:var(--white);">
+
+      <div>
+        <h2>Solicitar Presupuesto</h2>
+        <p style="color:var(--muted); margin-bottom:50px;">Completa el formulario y recibirás una propuesta personalizada.</p>
+
+        <form id="contact-form" class="card">
+          <input class="input" name="name" placeholder="Tu nombre" required>
+          <input class="input" name="email" type="email" placeholder="Correo electrónico" required>
+          <input class="input" name="phone" placeholder="Teléfono (opcional)">
+          <textarea name="message" placeholder="Cuéntame sobre tu proyecto: tipo de sesión, fecha, ideas..." required></textarea>
+
+          <label style="display:flex; align-items:center; gap:8px; color:var(--muted); font-size:13px; margin-top:10px;">
+            <input type="checkbox" required> Acepto que mis datos sean usados para responder mi consulta.
+          </label>
+
+          <button type="submit" class="submit">Enviar mensaje</button>
+        </form>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h4>📞 Contacto directo</h4>
+          <p style="color:var(--muted)">WhatsApp: +51 9XXXXXXXX</p>
+          <p style="color:var(--muted)">Email: hola@yoselinfotografia.com</p>
+        </div>
+
+        <div class="card">
+          <h4>🕐 Horario</h4>
+          <p style="color:var(--muted)">Lun - Vie: 9:00 - 18:00</p>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      <div>¿Tienes dudas? <a class="ghost" href="index.html">Ir al inicio</a></div>
+      <div style="margin-top:6px;">© Yoselin Fotografía — 2025</div>
+    </footer>
+  </main>
+
+  <script>
+    // Animación de transición de páginas (sin React)
+    document.querySelectorAll('a').forEach(a=>{
+      a.addEventListener('click', e=>{
+        if(a.getAttribute('href') && !a.classList.contains('cta-btn')){
+          e.preventDefault();
+          document.body.style.opacity = 0;
+          setTimeout(()=>window.location = a.href, 300);
+        }
+      });
+    });
+
+    // Simulación de envío del formulario
+    document.querySelector("#contact-form").addEventListener("submit", e=>{
+      e.preventDefault();
+      alert("¡Gracias! Tu mensaje fue enviado correctamente 💌");
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>

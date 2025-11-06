@@ -1,0 +1,439 @@
+:root {
+    /* --- PALETA DE COLORES LILA/MORADO --- */
+    --bg: #11001c; /* Fondo oscuro morado/casi negro */
+    --text: #ffffff; /* Color de texto principal: Blanco/Gris muy claro */
+    --accent: #d78aff; /* Lila brillante (Acento Principal) */
+    --accent-2: #ffb5f7; /* Rosa claro/Lila claro (Acento Secundario/CTA) */
+    --muted: #b8a0c4; /* Gris para texto secundario */
+    --card-bg: #1c072b; /* Fondo de tarjeta oscuro (Sutilmente morado) */
+    --glass: rgba(195, 192, 197, 0.15); /* Fondo para efecto cristal, usando el color accent */
+    
+    /* --- VARIABLES ESTRUCTURALES Y DE FUENTE --- */
+    --radius: 12px;
+    --transition: 0.3s ease;
+    --max-width: 1200px;
+    --fw-regular: 400;
+    --fw-medium: 600;
+    --fw-bold: 700;
+}
+
+/* * Ajustes de estilo para asegurar que el texto sea blanco
+ * y los elementos usen los nuevos colores
+ */
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text); /* Asegura que todo el texto herede el blanco */
+    margin: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    /* Fondo oscuro transparente con tono morado */
+    background: rgba(17, 0, 28, 0.85);
+    backdrop-filter: blur(10px);
+}
+
+.card {
+    background: var(--card-bg); /* Fondo de tarjeta oscuro */
+    border: 1px solid rgba(69, 0, 90, 0.08); /* Borde sutil */
+}
+
+/* Asegurar que los títulos sean blancos */
+h1, h2, h3, h4 {
+    color: var(--text) !important; 
+}
+/* Asegurar que el CTA final en el blog se vea con texto negro sobre el degradado */
+.cta-final-card h3, .cta-final-card p, .cta-final-card a {
+    color: #b5b5b6 !important;
+}
+
+/* Asegurar que los enlaces de navegación y otros elementos sean correctos */
+nav a {
+    color: var(--muted);
+}
+nav a:hover, nav a.active {
+    color: var(--accent);
+}
+.logo {
+    color: var(--accent);
+}
+
+/* Botón de envío y CTA */
+.submit, nav .cta-btn {
+    background: var(--accent);
+    color: #000000; /* Texto del botón negro para contraste con el lila */
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: radial-gradient(1200px 500px at 10% 10%, rgba(124,92,255,0.08), transparent),
+              linear-gradient(180deg, rgba(10,10,12,1) 0%, rgba(18,20,23,1) 100%);
+  color:var(--white);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  padding-bottom:120px;
+}
+
+/* Container */
+.container{
+  width:92%;
+  max-width:var(--max-width);
+  margin:0 auto;
+  color:white
+}
+
+/* Header / nav */
+.header{
+  position:fixed;
+  top:18px;
+  left:50%;
+  transform:translateX(-50%);
+  width:calc(100% - 60px);
+  max-width:var(--max-width);
+  z-index:999;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:14px;
+  box-shadow:0 8px 30px rgba(2,6,23,0.6);
+  padding:10px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  transition:var(--transition);
+}
+
+/* logo */
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.logo{
+  height:46px;
+  width:46px;
+  border-radius:12px;
+  background: linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  color:var(--white);
+  box-shadow:0 6px 20px rgba(124,92,255,0.16);
+}
+.brand h1{font-size:16px;line-height:1}
+.brand p{font-size:12px;color:var(--muted);margin-top:2px}
+
+/* Menu */
+.nav{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+.nav a{
+  color:var(--muted);
+  text-decoration:none;
+  font-weight:var(--fw-medium);
+  padding:8px 10px;
+  border-radius:8px;
+  transition:var(--transition);
+}
+.nav a:hover{color:var(--white);transform:translateY(-3px)}
+.cta-btn{
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  padding:10px 16px;
+  border-radius:12px;
+  color:var(--white);
+  font-weight:700;
+  box-shadow:0 12px 40px rgba(97, 97, 97, 0.14);
+  transform:translateZ(0);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.cta-btn:hover{transform:translateY(-4px) scale(1.02); box-shadow:0 18px 50px rgba(124,92,255,0.2)}
+
+/* Hero */
+.hero{
+  min-height:88vh;
+  display:grid;
+  grid-template-columns: 1fr 460px;
+  gap:48px;
+  align-items:center;
+  padding-top:120px;
+}
+
+.hero-left{
+  padding:18px;
+}
+.kicker{
+  display:inline-block;
+  background:linear-gradient(90deg,rgba(255,59,107,0.12), rgba(124,92,255,0.12));
+  color:var(--accent);
+  padding:8px 12px;
+  border-radius:999px;
+  font-weight:700;
+  margin-bottom:18px;
+  backdrop-filter: blur(6px);
+}
+.title{
+  font-size:46px;
+  line-height:1.02;
+  margin-bottom:12px;
+  letter-spacing:-0.6px;
+  background: linear-gradient(90deg,#fff, #dbe6ff 60%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.lead{color:var(--muted); max-width:62%; margin-bottom:20px}
+.hero-actions{display:flex;gap:12px;align-items:center}
+.ghost{
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.06);
+  color:var(--white);
+  background:transparent;
+}
+
+/* Hero right - image / card */
+.hero-card{
+  height:540px;
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  box-shadow: 0 30px 80px rgba(2,6,23,0.6);
+}
+.hero-card .overlay-shape{
+  position:absolute;
+  width:320px;
+  height:320px;
+  right:-80px;
+  top:-80px;
+  background: radial-gradient(circle at 30% 30%, rgba(124,92,255,0.18), transparent 40%),
+              conic-gradient(from 120deg, rgba(255,59,107,0.06), transparent);
+  transform:rotate(18deg);
+  border-radius:40%;
+  filter: blur(26px);
+}
+.mock-photo{
+  width:420px;
+  height:520px;
+  border-radius:14px;
+  background: linear-gradient(180deg, #111214, #0b0b0d);
+  box-shadow: inset 0 6px 24px rgba(255,255,255,0.02);
+  transform: rotate(-6deg) translateX(-10px);
+  border: 4px solid rgba(255,255,255,0.03);
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding:18px;
+}
+
+/* portfolio grid - reusable */
+.grid{
+  display:grid;
+  gap:18px;
+  grid-template-columns:repeat(3,1fr);
+}
+.card{
+  background: linear-gradient(180deg,var(--glass), var(--glass-2));
+  border-radius:14px;
+  padding:14px;
+  transition:var(--transition);
+  box-shadow: 0 6px 24px rgba(2,6,23,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+.card:hover{transform:translateY(-8px) scale(1.01); box-shadow:0 12px 40px rgba(2,6,23,0.8)}
+
+/* portfolio item */
+.port-item{
+  position:relative;
+  color: #fff;
+  min-height:220px;
+  border-radius:12px;
+  overflow:hidden;
+  display:flex;
+  align-items:end;
+  justify-content:center;
+  background-size:cover;
+  background-position:center;
+}
+.port-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, transparent 30%, rgba(2,6,23,0.62));
+  display:flex;align-items:flex-end;padding:14px;
+  transition:var(--transition);
+}
+.port-item:hover .port-overlay{transform:translateY(0)}
+.port-title{font-weight:700}
+.port-sub{font-size:13px;color:var(--muted);}
+
+/* services */
+.services{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.service{
+  padding:20px;
+  border-radius:14px;
+  min-height:210px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  align-items:flex-start;
+}
+.service .icon{
+  width:56px;height:56px;border-radius:12px;
+  display:grid;place-items:center;font-weight:700;
+  background:linear-gradient(90deg,var(--accent-2),var(--accent));
+}
+
+/* blog list */
+.blog-list{
+  display:flex;flex-direction:column;gap:14px;
+}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 360px;gap:28px;}
+
+/* contact */
+.form{
+  display:grid;
+  gap:12px;
+}
+.input, textarea{
+  background:transparent;border:1px solid rgba(255,255,255,0.06);
+  padding:12px;border-radius:10px;color:var(--white);
+  min-height:44px;outline:none;
+}
+textarea{min-height:140px;resize:vertical}
+.form .submit{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  padding:12px;border-radius:12px;color:white;border:none;font-weight:700;
+}
+
+/* footer */
+.footer{
+  margin-top:60px;padding:28px 12px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;
+  border-top:1px solid rgba(102, 102, 102, 0.03); color: #fff;
+}
+
+/* responsive */
+@media (max-width:1100px){
+  .hero{grid-template-columns:1fr; padding-top:140px}
+  .hero-left .lead{max-width:100%}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .services{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+  .header{left:12px;right:12px;transform:none}
+  .nav{display:none}
+  .mock-photo{width:300px;height:380px}
+  .grid{grid-template-columns:1fr}
+  .services{grid-template-columns:1fr}
+}
+
+/* page transition */
+.page-enter{opacity:0; transform:translateY(6px)}
+.page-enter-active{opacity:1; transform:none; transition: opacity 520ms ease, transform 520ms ease}
+.page-exit{opacity:1}
+.page-exit-active{opacity:0; transform:translateY(-8px); transition: opacity 420ms ease, transform 420ms ease}
+
+/* Lightbox */
+.lightbox{
+  position:fixed; inset:0; display:none; align-items:center; justify-content:center;
+  background: rgba(2,6,23,0.86); z-index:2000; padding:28px;
+}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90%; max-height:80%; border-radius:12px; box-shadow:0 40px 120px rgba(2,6,23,0.8)}
+
+/* micro-animations */
+.fade-in{opacity:0; transform:translateY(8px); transition: all 640ms cubic-bezier(.2,.9,.3,1)}
+.fade-in.show{opacity:1; transform:none}
+
+.hero-carousel {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   background: transparent;
+  overflow: hidden;
+}
+
+.carousel-container {
+  position: relative;
+  width: 80%;
+  height: 70%;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.carousel-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  transform: scale(0.9);
+  opacity: 0.6;
+  transition: all 1s ease-in-out;
+}
+
+.carousel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* === ESTILO PARA TARJETA ACTIVA === */
+.carousel-card.active {
+  transform: scale(1) translateZ(50px);
+  opacity: 1;
+  z-index: 3;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+}
+
+/* Tarjetas detrás */
+.carousel-card.prev {
+  transform: translateX(-60%) rotateY(20deg) scale(0.8);
+  z-index: 2;
+  opacity: 0.7;
+}
+.carousel-card.next {
+  transform: translateX(60%) rotateY(-20deg) scale(0.8);
+  z-index: 2;
+  opacity: 0.7;
+}
+
+/* === ANIMACIÓN AUTOMÁTICA === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.carousel-card img {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* === OPCIONAL: RESPONSIVE === */
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 90%;
+    height: 60%;
+  }
+}

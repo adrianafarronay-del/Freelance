@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Portafolio — Yoselin Fotografía</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header container">
+    <div class="brand">
+      <div class="logo">FY</div>
+      <div>
+        <h1 style="font-size:14px">Yoselin Fotografía</h1>
+        <p>Portafolio</p>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="index.html" data-pagetrans>Inicio</a>
+      <a href="portfolio.html" data-pagetrans>Portafolio</a>
+      <a href="servicios.html" data-pagetrans>Servicios</a>
+      <a href="blog.html" data-pagetrans>Blog</a>
+      <a href="about.html" data-pagetrans>Acerca de mí</a>
+      <a href="contact.html" data-pagetrans>Contacto</a>
+      <a class="cta-btn" data-cta="contact">Solicitar Presupuesto</a>
+    </nav>
+  </header>
+
+  <main class="container" style="padding-top:120px">
+    <section>
+      <h2 style="margin-bottom:8px">Portafolio</h2>
+      <p style=" margin-bottom:18px">Galería categorizada — haz click para ampliar.</p>
+
+      <div style="display:flex; gap:12px; margin-bottom:16px;">
+        <a href="#all" class="ghost">Todo</a>
+        <a href="#editorial" class="ghost">Editorial</a>
+        <a href="#lifestyle" class="ghost">Lifestyle</a>
+        <a href="#eventos" class="ghost">Eventos</a>
+      </div>
+
+      <div class="grid">
+        <!-- each item has data-light for lightbox -->
+        <div class="card port-item fade-in" data-light="https://i.pinimg.com/736x/45/e0/3f/45e03f22a5c87bda83191cf246413df3.jpg" data-title="Editorial 1" style="background-image:url('https://i.pinimg.com/736x/45/e0/3f/45e03f22a5c87bda83191cf246413df3.jpg')">
+          <div class="port-overlay">
+            <div>
+              <div class="port-title">Editorial 1</div>
+              <div class="port-sub">Moda</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card port-item fade-in" data-light="https://i.pinimg.com/736x/20/8e/9a/208e9a3caac820c36fa6508fe3b691eb.jpg" data-title="Retrato 1" style="background-image:url('https://i.pinimg.com/736x/20/8e/9a/208e9a3caac820c36fa6508fe3b691eb.jpg')">
+          <div class="port-overlay">
+            <div>
+              <div class="port-title">Retrato 1</div>
+              <div class="port-sub">Lifestyle</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card port-item fade-in" data-light="https://i.pinimg.com/1200x/32/d6/c5/32d6c5984e14734aa9e9753853a6a363.jpg" data-title="Evento 1" style="background-image:url('https://i.pinimg.com/1200x/32/d6/c5/32d6c5984e14734aa9e9753853a6a363.jpg')">
+          <div class="port-overlay">
+            <div>
+              <div class="port-title">Evento 1</div>
+              <div class="port-sub">Cobertura</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card port-item fade-in" data-light="https://i.pinimg.com/736x/5e/7d/8f/5e7d8fc23b51230de90fe8a024aafac2.jpg" data-title="Editorial 2" style="background-image:url('https://i.pinimg.com/736x/5e/7d/8f/5e7d8fc23b51230de90fe8a024aafac2.jpg')">
+          <div class="port-overlay">
+            <div>
+              <div class="port-title">Editorial 2</div>
+              <div class="port-sub">Lookbook</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card port-item fade-in" data-light="https://i.pinimg.com/736x/90/1f/a2/901fa20c5e3c9c7d062cd6cd0346d804.jpg" data-title="Retrato 2" style="background-image:url('https://i.pinimg.com/736x/90/1f/a2/901fa20c5e3c9c7d062cd6cd0346d804.jpg')">
+          <div class="port-overlay">
+            <div>
+              <div class="port-title">Retrato 2</div>
+              <div class="port-sub">Persona</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card port-item fade-in" data-light="https://i.pinimg.com/1200x/42/5a/08/425a0889bdc2c22b498883faa1f519cd.jpg" data-title="Evento 2" style="background-image:url('https://i.pinimg.com/1200x/42/5a/08/425a0889bdc2c22b498883faa1f519cd.jpg')">
+          <div class="port-overlay">
+            <div>
+              <div class="port-title">Evento 2</div>
+              <div class="port-sub">Boda</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="footer container" style="margin-top:40px">
+      <div>© Yoselin Fotografía</div>
+      <div style="display:flex;gap:12px"><a class="ghost" href="index.html" data-pagetrans>Inicio</a> <a class="ghost" href="contact.html" data-pagetrans>Contactar</a></div>
+    </footer>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

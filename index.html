@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Fotógrafo Freelance — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Portfolio profesional de fotógrafo freelance — sesiones, eventos y blog de fotografía.">
+  <style>
+    /* --- NUEVA PALETA DE COLORES (Azul/Cian/Naranja) --- */
+
+    
+    /* --- Estilos Generales --- */
+    .hero {
+      padding-top: 100px; /* Ajuste para el header fijo */
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-left {
+      flex: 1;
+      max-width: 50%; /* Mantiene el tamaño original de la columna de texto */
+    }
+    .hero-carousel {
+      flex: 1; /* Mantiene el tamaño original del carrusel */
+    }
+    .kicker {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .title {
+      font-size: 3rem;
+      font-weight: 800;
+    }
+    .lead {
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+    .ghost {
+      color: var(--muted);
+      text-decoration: none;
+      border: 1px solid var(--muted);
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+    .ghost:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .port-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+    }
+    .port-title {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .port-sub {
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+   
+    .service .icon {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-2); /* Icono con color secundario */
+      margin-bottom: 10px;
+      display: inline-block;
+      border: 2px solid var(--accent-2);
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      line-height: 31px;
+      text-align: center;
+    }
+
+    /* Estilo del Blog Preview */
+    .blog-list .card {
+      align-items: center;
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header container">
+    <div class="brand">
+      <div class="logo">FY</div>
+      <div>
+        <h1 style="font-size:1.5rem; font-weight:700; line-height:1;">Yoselin Fotografía</h1>
+        <p style="font-size:0.9rem; color:var(--muted); line-height:1;">Fotógrafa Freelance — Tops & Fine Art</p>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="index.html" data-pagetrans>Inicio</a>
+      <a href="portfolio.html" data-pagetrans>Portafolio</a>
+      <a href="servicios.html" data-pagetrans>Servicios</a>
+      <a href="blog.html" data-pagetrans>Blog</a>
+      <a href="about.html" data-pagetrans>Acerca de mí</a>
+      <a href="contact.html" data-pagetrans>Contacto</a>
+      <a class="cta-btn" data-cta="contact">Solicitar Presupuesto</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <span class="kicker fade-in">Fotografía Profesional</span>
+        <h2 class="title fade-in">Capturo momentos con identidad y estilo</h2>
+        <p class="lead fade-in">Portfolio profesional, servicios para sesiones, eventos y un blog con consejos prácticos para mejorar tu imagen y contar historias con luz.</p>
+
+        <div class="hero-actions fade-in" style="display:flex; gap:15px; margin-top:30px;">
+          <a class="cta-btn" data-cta="contact">Solicitar Presupuesto</a>
+          <a class="ghost" href="portfolio.html" data-pagetrans>Ver Portafolio</a>
+        </div>
+
+        <div style="margin-top:30px" class="fade-in">
+          <div class="card" style="margin-top:14px; max-width:720px;">
+            <div style="display:flex; gap:15px; align-items:center;">
+              <div style="width:60px; height:60px; border-radius:12px; background:linear-gradient(90deg,var(--accent-2),var(--accent)); display:grid; place-items:center; font-weight:700; font-size:1.5rem;">⭐</div>
+              <div>
+                <div style="font-weight:700; color:var(--white);">Resultados profesionales</div>
+                <div style="font-size:13px; color:var(--muted);">Entrega en alta resolución, edición y derechos para redes y catálogo.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <section class="hero-carousel">
+        <div class="carousel-container">
+          <div class="carousel-card">
+            <img src="https://i.pinimg.com/736x/fe/f0/83/fef0833efb2be10aeee9acacc78b4de7.jpg" alt="Foto 1">
+          </div>
+          <div class="carousel-card">
+            <img src="https://i.pinimg.com/736x/ac/fc/ff/acfcff8363dfb3d9f010bea9c67e5769.jpg" alt="Foto 2">
+          </div>
+          <div class="carousel-card">
+            <img src="https://i.pinimg.com/736x/99/29/38/9929381e513500ffac3375e8e28d79ce.jpg" alt="Foto 3">
+          </div>
+          <div class="carousel-card">
+            <img src="https://i.pinimg.com/736x/57/46/e8/5746e86d36a108d734733b1c1019b4f4.jpg" alt="Foto 4">
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section style="margin-top:80px;">
+      <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:20px">
+        <h3 style="font-size:24px; font-weight:700;">Portafolio destacado</h3>
+        <a href="portfolio.html" data-pagetrans class="ghost">Ver todo</a>
+      </div>
+
+      <div class="grid">
+        <div class="card port-item fade-in" style="background-image:url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde?q=80&w=1400')">
+          <div class="port-overlay">
+            <div>
+              <div class="port-title">Sesión Editorial</div>
+              <div class="port-sub">Moda / Lookbook</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card port-item fade-in" style="background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1400')">
+          <div class="port-overlay">
+            <div>
+              <div class="port-title">Retrato Urbano</div>
+              <div class="port-sub">Lifestyle</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card port-item fade-in" style="background-image:url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1400')">
+          <div class="port-overlay">
+            <div>
+              <div class="port-title">Evento Corporativo</div>
+              <div class="port-sub">Cobertura</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:80px;">
+  <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:20px">
+    <h3 style="font-size:24px; font-weight:700;">Servicios</h3>
+    <a href="servicios.html" data-pagetrans class="ghost">Ver detalles</a>
+  </div>
+
+  <div class="services">
+    
+    <div class="card service fade-in">
+      <div class="service-icon" style="font-size:3rem; margin-bottom:15px; line-height:1;">📸</div>
+      <h3>Sesiones de Estudio (Pack Básico)</h3>
+      <p style="font-size:0.95rem; color:var(--muted);">Iluminación profesional en estudio. Incluye 1 hora de sesión y 10 fotos editadas en alta resolución.</p>
+      <div class="price-text" style="font-size:1.4rem; margin-top:auto; font-weight:800; color:var(--accent);">Desde S/150</div>
+    </div>
+
+    <div class="card service fade-in">
+      <div class="service-icon" style="font-size:3rem; margin-bottom:15px; line-height:1;">🎉</div>
+      <h3>Cobertura de Eventos</h3>
+      <p style="font-size:0.95rem; color:var(--muted);">Cobertura completa de eventos sociales o corporativos. Incluye equipos backup y entrega digital rápida.</p>
+      <div class="price-text" style="font-size:1.4rem; margin-top:auto; font-weight:800; color:var(--accent);">Presupuesto Personalizado</div>
+    </div>
+
+    <div class="card service fade-in">
+      <div class="service-icon" style="font-size:3rem; margin-bottom:15px; line-height:1;">🏙️</div>
+      <h3>Fotografía de Marca y Catálogo</h3>
+      <p style="font-size:0.95rem; color:var(--muted);">Ideal para lookbooks y redes sociales. Creación de contenido visual de alta calidad con retouch profesional.</p>
+      <div class="price-text" style="font-size:1.4rem; margin-top:auto; font-weight:800; color:var(--accent);">Desde S/480</div>
+    </div>
+    
+  </div>
+</section>
+
+    <section style="margin-top:80px;">
+      <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:20px">
+        <h3 style="font-size:24px; font-weight:700;">Blog — Consejos de Fotografía</h3>
+        <a href="blog.html" data-pagetrans class="ghost">Ir al blog</a>
+      </div>
+
+      <div class="blog-list">
+        <div class="card fade-in" style="display:flex; gap:20px; align-items:center;">
+          <div style="width:92px; height:72px; border-radius:8px; background:url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde?q=80&w=1000') center/cover; flex-shrink: 0;"></div>
+          <div>
+            <div style="font-weight:700; color:var(--accent);">Cómo preparar tu sesión en 5 pasos</div>
+            <div style="color:var(--muted); font-size:14px">Consejos simples para que tus fotos salgan perfectas.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer container">
+      <div style="color:var(--muted);">© <strong>Yoselin Fotografía</strong> — 2025. Todos los derechos reservados.</div>
+      <div style="display:flex;gap:15px; align-items:center;">
+        <a href="#" class="ghost" style="border:none;">Instagram</a>
+        <a href="#" class="ghost" style="border:none;">WhatsApp</a>
+      </div>
+    </footer>
+  </main>
+
+  <button style="position:fixed; right:20px; bottom:18px; z-index:1000; border:none" class="cta-btn" data-cta="contact">Solicitar Presupuesto</button>
+
+  <script src="main.js"></script>
+</body>
+</html>
